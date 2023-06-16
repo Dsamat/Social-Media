@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Social_Style.css">
+    <script src="https://kit.fontawesome.com/dabaca69db.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <span><h2 class="s">Social Book</h2></span>
+            <!-- <span><img src="C:\Users\Asus\Desktop"></span> -->
+            <i id="friend" class="fas fa-user-friends"></i>
+           
+            
+            <ul>
+                <li><i class="fa-thin fa-bell-exclamation"></i></li>
+                <li><i id="bell" class="fa-solid fa-house"></i></li>
+                <li><i id="env" class="fa-solid fa-envelope"></i></li>
+                <li><i id="tv" class="fa-solid fa-tv"></i></li>
+              
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="searchbar">
+                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                <div class="input-group">
+                    <div class="form-outline">
+                      <input type="search" id="form1" class="form-control" />
+                      <!-- <label class="form-label" for="form1">Search</label> -->
+                    </div>
+                    <div>
+                        <button type="button" class="btn-btn-primary"><i class="fas fa-search"></i> </button>
+                    </div>
+                </div>
+            </div>
+            <div class="img online" onclick="settingsMenuToggle()">
+                <img  class="img1" src="C:\Users\Asus\Pictures\Amit .png">
+            </div>
+        </div>
+        <!-- settings menu -->
+        <div id="dark-btn" class="settings-menu" >
+
+            <div id="dark-btn" class="dark-btn-on" onclick="ToogleButton()">
+                <span></span>
+            </div>
+            <div class="settings-menu-inner">
+                <div class="user-profile">
+                    <img src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <a href="#">See Your Profile</a>
+                    </div>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjXfp54aUqXrlcY4ddB0-5yxKJnSlD7f8KRQ&usqp=CAU">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <a href="#">Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="settings-links">
+                    <img src="data:image/png;base64,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" class="settings-icon">
+                    <a href="#"> Setting and Privacy </a>
+                </div>
+                <div class="settings-links">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-iBZoEBrwPlrIvbO5G5KADk0TWbYxhaiJPw&usqp=CAU" class="settings-icon">
+                    <a href="#"> Help and support </a>
+                </div>
+                <div class="settings-links">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEX///8AAACAgIChoaEnJyfFxcW4uLj7+/u8vLz39/f09PTIyMjv7+/n5+fe3t7Ozs7Y2NgSEhJBQUGQkJBbW1tra2s4ODh6enqpqakwMDDU1NSvr69HR0eGhoZ0dHRgYGCcnJxTU1MeHh4WFhaNjY0xMTHbhC63AAAEE0lEQVR4nO3d63aiMBSG4QmoIHIS0CpKFbX3f4ujaa1VpCbBce8w3/ObtWa/g3K2/PkDAAAAr+WNgyAYe9Rj/CPjqBwu8sqp8sWwjMbU4zxd5OfFQJwNityPqEd6qmi72Ylr+822P43eohb31IuefCPj2fRuoBDTWUw93DNMli19J8sJ9XjdjX7pOxlRD9jVo0AhVtQjduM/DBTCpx6yi/R2H3HPLqUe01xYKAQKUQTUgxrbKgUKsaUe1FSZKRZmJfWohirFQCEq6lHNJKqr8LgSE+phjSyUA4VYUA9rIpppFM5sPM8oB4/Dvg1s3NaoHM5cWHhgM861CnPrLmt4oc7X8PhFDKkn1hbWWoW1fYWR+t7wJLNvYxrNtQrnKOQnWmsVru0rVDw3PCvs29IEb1qFb/adBXs6B97HQ28LLw4PtQptvG6a6uwQMxuvRgWORmFl39fwaNR2u6JpaueV71h9f1FYeofGVS50qUc1pLzT39i3u//iq1zUF2Jn4Qn+2UGp8EA9ZgeByufU4tsWR/Hj3X5m6Xb07OGRjZVHM1fi+tfA2vI1eBI67cc2U8fa/cSVVdvp/trye/gXcX7v25jlPfiEfkvcYn/9+SxcO++otYsn7nv2WbnP3t1Jn9bfmRdGcVqWZRpHoYXXLAAAAPouXrk8rZ5yYBRtdZ6LebVB9580+Ho3Ol9v3fFC3YjzCvw06HRHQOvJLSqdnhirqadXUndYhdSzKzJfiXq34um8GRdy346erY0LP6hHV/RhXKj3WBOduXFh/z+l/d/SJNSjK+pw5dWOL6L51/B4YkE9vJJOpxc+/wPTQbeTC8+vqQseqP2u18/jbaH2RAWFXbF9wmm+Fyf+SI/ew7MXhea/4ycx0Q0QnWf2fnJoxjWAQhTyh0IU8odCFPKHQhTyh0IU8odCFPKHQhTyh0IU8odCFPKHQhTyh0IU8odCFPKHQhTyh0IU8odCFPKHQhTyh0IU8odCFPLXLJxuKudatWn+oTqbCwfNv2Y9af6kyurCYWOhIQo5Q6GEQtZQKKGQNRRKKGQNhRIKWUOhhELWUCihkDUUSihkDYUSCllDoYRC1lAooZA1FEooZA2FEgpZQ6GEQtZQKKGQNRRKKGQNhRIKWUOhhELWUCihkDUUSihkDYUSCllDodS3wp79wvLQmH2ZNhZKl42lDgSzmnEbP/HNmu9HG2e3C01dglnNJI13X77fWer9dqF5h7dtvlpj+Hvv8ItV/hu4im9WYnV3qepmFT7hVYav4+9/zr5pWWrzc6F9t7dtvtzqsh2ZOmHLQqFz2SRlq5fO9wTl4eut3ptV0LpQsPpajcuD+RvgyQSpnzvVIvn9XbZRsqic3E/b/xdYGwfB4/eEekEwfsEsAAAA/7W/niNNp3vwZrcAAAAASUVORK5CYII=" class="settings-icon">
+                    <a href="#"> Display and Accessibility </a>
+                </div>
+                <div class="settings-links">
+                    <img src="data:image/png;base64,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" class="settings-icon">
+                    <a href="#"> Sound Settings </a>
+                </div>
+                <div class="settings-links">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR1c9VXFF7fBB9mKVIST7LUrVNNeKWu06k6Q&usqp=CAU" class="settings-icon">
+                    <a href="#"> Resolutuion </a>
+                </div>
+                <div class="settings-links">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9-KCL7l0vsf7Mv6L6w2DgP8djSOu9yk1-tg&usqp=CAU" class="settings-icon">
+                    <a href="#"> Log Out </a>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+    </nav>
+
+    <!-- left sidebar -->
+    <div class="container">
+        <div class="left-sidebar">
+          <div class="imp-links">
+            <a href="#"><i class="fa-sharp fa-solid fa-newspaper"></i>Latest</a>
+            <a href="#"><i class="fa-sharp fa-solid fa-user-group"></i>Friends</a>
+            <a href="#"> <i class="fa-solid fa-users-rays"></i>Groups</a>
+            <a href="#"><i class="fa-sharp fa-solid fa-shop"></i>Marketplace</a>
+            <a href="#"><i class="fa-sharp fa-solid fa-tv"></i>Watch</a>
+            <a href="#">See More</a>
+          </div>
+          <div class="shortscut-links">
+            <h5>Your Shortscuts</h5>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1S9Sfea0PDJpivprqGD4Wq344RDtS9Q9ww&usqp=CAU"/><span>Web Developers</span></a>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzug2D7yvMbwyrmjh-Rif3LlPqmaNoVM9zPw&usqp=CAU"><span>Web Design Course</span></a>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Z0D7tANHQS7sT_6n3YvFbRkc52-cSULIxQ&usqp=CAU"><span>Full Stack Development</span></a>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_N_EAasrsB2k4d3HlCDfDfF12dmwg-t5pw&usqp=CAU"><span>Website Experts</span></a>
+          </div>
+        </div>
+        
+  
+        <!-- Main Content -->
+        
+        <div class="main-content">
+             <div class="story-gallery">
+                <div class="story story1">
+                    <span class="post-icon"><i class="fa-light fa-square-plus"></i></span>
+                    <p>Post Story</p>
+                </div>   
+                <div class="story story2">
+                    <span class="post-icon"><i class="fa-light fa-square-plus"></i></span>
+                    <p>Albert Rao</p>
+                </div>   
+                <div class="story story3">
+                    <span class="post-icon"><i class="fa-light fa-square-plus"></i></span>
+                    <p>Myke Oneil</p>
+                </div>   
+                <div class="story story4">
+                    <span class="post-icon"><i class="fa-light fa-square-plus"></i></span>
+                    <p>Bobby Lashley</p>
+                </div>   
+                <div class="story story5">
+                    <span class="post-icon"><i class="fa-light fa-square-plus"></i></span>
+                    <p>Creator Pilot</p>
+                </div>   
+             </div>
+
+             <div class="write-post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <small>Public<i class="fa-sharp fa-solid fa-sort-down"></i></small>
+                    </div>
+                </div>
+                <div class="post-input-container">
+                    <textarea rows="3" placeholder="Hey Amit, What's on your mind"></textarea>
+                    <div class="add-post-links">
+                        <a href="#"><i class="fa-sharp fa-solid fa-video"></i>Live Vedio</a>
+                        <a href="#"><i class="fa-solid fa-camera"></i>Photo/Vedio</a>
+                        <a href="#"><i class="fa-solid fa-face-smile-beam"></i>Feeling/Activity</a>
+                    </div>
+                </div> 
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="https://thumbs.dreamstime.com/z/happy-friends-sparklers-camp-fire-night-celebration-holidays-people-concept-sitting-161986608.jpg"/>
+                </div>
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbhlY-hoY0c_Vb5eDuhu3wBOOalyXVj2Li6Q&usqp=CAU"/>
+                </div>
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="https://previews.123rf.com/images/sorapop/sorapop1911/sorapop191100213/133532716-camping-tent-camp-in-nature-happy-friends-group-night-party-bonfire-and-playing-guitar-together-in-s.jpg"/>
+                </div>
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="data:image/jpeg;base64,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"/>
+                </div>
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="https://thumbs.dreamstime.com/z/happy-friends-sparklers-camp-fire-night-celebration-holidays-people-concept-sitting-161986608.jpg"/>
+                </div>
+             </div>
+             <div class="post-container">
+                <div class="user-profile">
+                    <img class="user-img" src="C:\Users\Asus\Pictures\Amit .png">
+                    <div>
+                        <p>Amit Vishwakarma</p>
+                        <span>October 29 2020, 13:40pm</span>
+                    </div>
+                </div>
+                <p class="post-texts">Social Media <a href="#">@Social.help.support.com</a>  is a enhancing website where people can interact and communicate
+                     with each other in terms of their social life and relationships. <a href="#">#Blog creaters</a></p>
+                <div class="post-image">
+                    <img src="https://thumbs.dreamstime.com/z/happy-friends-sparklers-camp-fire-night-celebration-holidays-people-concept-sitting-161986608.jpg"/>
+                </div>
+             </div>
+             <button type="button" class="load-more-btn">Load More</button>
+        </div>
+
+        
+       
+
+           <!-- Right SideBar -->
+        <div class="right-sidebar">
+            <div class="sidebar-title">
+                <h4>Events</h4>
+              <a href="#">See All</a>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>18</h3>
+                    <span>March</span>
+                </div>
+                <div class="right-event">
+                    <h4>Social Media</h4>
+                    <p><i class="fa-sharp fa-solid fa-location-crosshairs"></i>Willison Tech Park</p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>22</h3>
+                    <span>June</span>
+                </div>
+                <div class="right-event">
+                    <h4>Mobile Marketing</h4>
+                    <p><i class="fa-sharp fa-solid fa-location-crosshairs"></i>Willison Tech Park</p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="left-event">
+                    <h3>14</h3>
+                    <span>February</span>
+                </div>
+                <div class="right-event">
+                    <h4>Block-Chain Technology</h4>
+                    <p><i class="fa-sharp fa-solid fa-location-crosshairs"></i>Chandigarh Palace</p>
+                    <a href="#">More Info</a>
+                </div>
+            </div>
+
+            <div class="sidebar-title">
+                <h4>Advertisements</h4>
+              <a href="#">Close</a>
+            </div>
+
+            <img class="sidebar-add" src="https://www.youngisthan.in/wp-content/uploads/2015/10/corporate.jpg">
+
+            <div class="sidebar-title">
+                <h4>Conversation</h4>
+              <a href="#">Hide Chat</a>
+            </div>
+            
+            <div class="online-list">
+                <div class="online">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEv87RNQh4PYhTGhUH5TGNNYzkJRZVj5BGmg&usqp=CAU">
+                </div>
+                <p>Sundar Pichai</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLdz2H7YwWgZj2gpw-kcGLu0MKrsAPtHNtw&usqp=CAU">
+                </div>
+                <p>Ratan Tata</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="https://i.insider.com/569fdedfe6183e26008bad5c?width=600&format=jpeg&auto=webp">
+                </div>
+                <p>Mark Zukerbarg</p>
+            </div>
+               
+        </div>
+    </div>
+    <div class="footer">
+        <p> Load More</p>
+    </div>
+    <script src="script.js">
+           function ToogleButton(){
+               document.getElementById("dark-btn").classList.toggle="green";
+           }
+    </script>
+</body>
+</html>
